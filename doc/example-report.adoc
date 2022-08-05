@@ -1,0 +1,167 @@
+== Reflection access on reactor.netty.transport.ServerTransport$Acceptor
+
+[source]
+----
+{
+  "name" : "reactor.netty.transport.ServerTransport$Acceptor",
+  "queriedMethods" : [ {
+    "name" : "channelRead",
+    "parameterTypes" : [ "io.netty.channel.ChannelHandlerContext", "java.lang.Object" ]
+  }, {
+    "name" : "exceptionCaught",
+    "parameterTypes" : [ "io.netty.channel.ChannelHandlerContext", "java.lang.Throwable" ]
+  } ]
+}
+----
+
+[source]
+----
+java.lang.Class.getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+io.netty.channel.ChannelHandlerMask$2.run()Ljava/lang/Boolean;
+io.netty.channel.ChannelHandlerMask$2.run()Ljava/lang/Object;
+java.security.AccessController.executePrivileged(Ljava/security/PrivilegedExceptionAction;Ljava/security/AccessControlContext;Ljava/lang/Class;)Ljava/lang/Object;
+java.security.AccessController.doPrivileged(Ljava/security/PrivilegedExceptionAction;)Ljava/lang/Object;
+io.netty.channel.ChannelHandlerMask.isSkippable(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Z
+io.netty.channel.ChannelHandlerMask.mask0(Ljava/lang/Class;)I
+io.netty.channel.ChannelHandlerMask.mask(Ljava/lang/Class;)I
+io.netty.channel.AbstractChannelHandlerContext.<init>(Lio/netty/channel/DefaultChannelPipeline;Lio/netty/util/concurrent/EventExecutor;Ljava/lang/String;Ljava/lang/Class;)V
+io.netty.channel.DefaultChannelHandlerContext.<init>(Lio/netty/channel/DefaultChannelPipeline;Lio/netty/util/concurrent/EventExecutor;Ljava/lang/String;Lio/netty/channel/ChannelHandler;)V
+io.netty.channel.DefaultChannelPipeline.newContext(Lio/netty/util/concurrent/EventExecutorGroup;Ljava/lang/String;Lio/netty/channel/ChannelHandler;)Lio/netty/channel/AbstractChannelHandlerContext;
+io.netty.channel.DefaultChannelPipeline.addLast(Lio/netty/util/concurrent/EventExecutorGroup;Ljava/lang/String;Lio/netty/channel/ChannelHandler;)Lio/netty/channel/ChannelPipeline;
+io.netty.channel.DefaultChannelPipeline.addLast(Lio/netty/util/concurrent/EventExecutorGroup;[Lio/netty/channel/ChannelHandler;)Lio/netty/channel/ChannelPipeline;
+io.netty.channel.DefaultChannelPipeline.addLast([Lio/netty/channel/ChannelHandler;)Lio/netty/channel/ChannelPipeline;
+reactor.netty.transport.ServerTransport$AcceptorInitializer.lambda$initChannel$0(Lio/netty/channel/Channel;)V
+reactor.netty.transport.ServerTransport$AcceptorInitializer$$Lambda$721/0x0000000801050bc0.run()V
+io.netty.util.concurrent.AbstractEventExecutor.runTask(Ljava/lang/Runnable;)V
+io.netty.util.concurrent.AbstractEventExecutor.safeExecute(Ljava/lang/Runnable;)V
+io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(J)Z
+io.netty.channel.nio.NioEventLoop.run()V
+io.netty.util.concurrent.SingleThreadEventExecutor$4.run()V
+io.netty.util.internal.ThreadExecutorMap$2.run()V
+io.netty.util.concurrent.FastThreadLocalRunnable.run()V
+java.lang.Thread.run()V
+<root>.<root>()V
+
+----
+
+== Reflection access on reactor.netty.http.server.HttpTrafficHandler
+
+[source]
+----
+{
+  "name" : "reactor.netty.http.server.HttpTrafficHandler",
+  "queriedMethods" : [ {
+    "name" : "channelActive",
+    "parameterTypes" : [ "io.netty.channel.ChannelHandlerContext" ]
+  }, {
+    "name" : "channelRead",
+    "parameterTypes" : [ "io.netty.channel.ChannelHandlerContext", "java.lang.Object" ]
+  }, {
+    "name" : "write",
+    "parameterTypes" : [ "io.netty.channel.ChannelHandlerContext", "java.lang.Object", "io.netty.channel.ChannelPromise" ]
+  } ]
+}
+----
+
+[source]
+----
+java.lang.Class.getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+io.netty.channel.ChannelHandlerMask$2.run()Ljava/lang/Boolean;
+io.netty.channel.ChannelHandlerMask$2.run()Ljava/lang/Object;
+java.security.AccessController.executePrivileged(Ljava/security/PrivilegedExceptionAction;Ljava/security/AccessControlContext;Ljava/lang/Class;)Ljava/lang/Object;
+java.security.AccessController.doPrivileged(Ljava/security/PrivilegedExceptionAction;)Ljava/lang/Object;
+io.netty.channel.ChannelHandlerMask.isSkippable(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Z
+io.netty.channel.ChannelHandlerMask.mask0(Ljava/lang/Class;)I
+io.netty.channel.ChannelHandlerMask.mask(Ljava/lang/Class;)I
+io.netty.channel.AbstractChannelHandlerContext.<init>(Lio/netty/channel/DefaultChannelPipeline;Lio/netty/util/concurrent/EventExecutor;Ljava/lang/String;Ljava/lang/Class;)V
+io.netty.channel.DefaultChannelHandlerContext.<init>(Lio/netty/channel/DefaultChannelPipeline;Lio/netty/util/concurrent/EventExecutor;Ljava/lang/String;Lio/netty/channel/ChannelHandler;)V
+io.netty.channel.DefaultChannelPipeline.newContext(Lio/netty/util/concurrent/EventExecutorGroup;Ljava/lang/String;Lio/netty/channel/ChannelHandler;)Lio/netty/channel/AbstractChannelHandlerContext;
+io.netty.channel.DefaultChannelPipeline.addBefore(Lio/netty/util/concurrent/EventExecutorGroup;Ljava/lang/String;Ljava/lang/String;Lio/netty/channel/ChannelHandler;)Lio/netty/channel/ChannelPipeline;
+io.netty.channel.DefaultChannelPipeline.addBefore(Ljava/lang/String;Ljava/lang/String;Lio/netty/channel/ChannelHandler;)Lio/netty/channel/ChannelPipeline;
+reactor.netty.http.server.HttpServerConfig.configureHttp11Pipeline(Lio/netty/channel/ChannelPipeline;ZLjava/util/function/Function;Ljava/util/function/BiPredicate;Lio/netty/handler/codec/http/cookie/ServerCookieDecoder;Lio/netty/handler/codec/http/cookie/ServerCookieEncoder;Lreactor/netty/http/server/HttpRequestDecoderSpec;Lreactor/netty/http/server/HttpServerFormDecoderProvider;Ljava/util/function/BiFunction;Ljava/time/Duration;Lreactor/netty/ConnectionObserver;Ljava/util/function/BiFunction;ILreactor/netty/channel/ChannelMetricsRecorder;ILjava/util/function/Function;)V
+reactor.netty.http.server.HttpServerConfig$HttpServerChannelInitializer.onChannelInit(Lreactor/netty/ConnectionObserver;Lio/netty/channel/Channel;Ljava/net/SocketAddress;)V
+reactor.netty.transport.TransportConfig$TransportChannelInitializer.initChannel(Lio/netty/channel/Channel;)V
+io.netty.channel.ChannelInitializer.initChannel(Lio/netty/channel/ChannelHandlerContext;)Z
+io.netty.channel.ChannelInitializer.handlerAdded(Lio/netty/channel/ChannelHandlerContext;)V
+io.netty.channel.AbstractChannelHandlerContext.callHandlerAdded()V
+io.netty.channel.DefaultChannelPipeline.callHandlerAdded0(Lio/netty/channel/AbstractChannelHandlerContext;)V
+io.netty.channel.DefaultChannelPipeline.access$100(Lio/netty/channel/DefaultChannelPipeline;Lio/netty/channel/AbstractChannelHandlerContext;)V
+io.netty.channel.DefaultChannelPipeline$PendingHandlerAddedTask.execute()V
+io.netty.channel.DefaultChannelPipeline.callHandlerAddedForAllHandlers()V
+io.netty.channel.DefaultChannelPipeline.invokeHandlerAddedIfNeeded()V
+io.netty.channel.AbstractChannel$AbstractUnsafe.register0(Lio/netty/channel/ChannelPromise;)V
+io.netty.channel.AbstractChannel$AbstractUnsafe.access$200(Lio/netty/channel/AbstractChannel$AbstractUnsafe;Lio/netty/channel/ChannelPromise;)V
+io.netty.channel.AbstractChannel$AbstractUnsafe$1.run()V
+io.netty.util.concurrent.AbstractEventExecutor.runTask(Ljava/lang/Runnable;)V
+io.netty.util.concurrent.AbstractEventExecutor.safeExecute(Ljava/lang/Runnable;)V
+io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(J)Z
+io.netty.channel.nio.NioEventLoop.run()V
+io.netty.util.concurrent.SingleThreadEventExecutor$4.run()V
+io.netty.util.internal.ThreadExecutorMap$2.run()V
+io.netty.util.concurrent.FastThreadLocalRunnable.run()V
+java.lang.Thread.run()V
+<root>.<root>()V
+
+----
+
+== Reflection access on reactor.netty.channel.ChannelOperationsHandler
+
+[source]
+----
+{
+  "name" : "reactor.netty.channel.ChannelOperationsHandler",
+  "queriedMethods" : [ {
+    "name" : "channelActive",
+    "parameterTypes" : [ "io.netty.channel.ChannelHandlerContext" ]
+  }, {
+    "name" : "channelInactive",
+    "parameterTypes" : [ "io.netty.channel.ChannelHandlerContext" ]
+  }, {
+    "name" : "channelRead",
+    "parameterTypes" : [ "io.netty.channel.ChannelHandlerContext", "java.lang.Object" ]
+  }, {
+    "name" : "exceptionCaught",
+    "parameterTypes" : [ "io.netty.channel.ChannelHandlerContext", "java.lang.Throwable" ]
+  } ]
+}
+----
+
+[source]
+----
+java.lang.Class.getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+io.netty.channel.ChannelHandlerMask$2.run()Ljava/lang/Boolean;
+io.netty.channel.ChannelHandlerMask$2.run()Ljava/lang/Object;
+java.security.AccessController.executePrivileged(Ljava/security/PrivilegedExceptionAction;Ljava/security/AccessControlContext;Ljava/lang/Class;)Ljava/lang/Object;
+java.security.AccessController.doPrivileged(Ljava/security/PrivilegedExceptionAction;)Ljava/lang/Object;
+io.netty.channel.ChannelHandlerMask.isSkippable(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Z
+io.netty.channel.ChannelHandlerMask.mask0(Ljava/lang/Class;)I
+io.netty.channel.ChannelHandlerMask.mask(Ljava/lang/Class;)I
+io.netty.channel.AbstractChannelHandlerContext.<init>(Lio/netty/channel/DefaultChannelPipeline;Lio/netty/util/concurrent/EventExecutor;Ljava/lang/String;Ljava/lang/Class;)V
+io.netty.channel.DefaultChannelHandlerContext.<init>(Lio/netty/channel/DefaultChannelPipeline;Lio/netty/util/concurrent/EventExecutor;Ljava/lang/String;Lio/netty/channel/ChannelHandler;)V
+io.netty.channel.DefaultChannelPipeline.newContext(Lio/netty/util/concurrent/EventExecutorGroup;Ljava/lang/String;Lio/netty/channel/ChannelHandler;)Lio/netty/channel/AbstractChannelHandlerContext;
+io.netty.channel.DefaultChannelPipeline.addLast(Lio/netty/util/concurrent/EventExecutorGroup;Ljava/lang/String;Lio/netty/channel/ChannelHandler;)Lio/netty/channel/ChannelPipeline;
+io.netty.channel.DefaultChannelPipeline.addLast(Ljava/lang/String;Lio/netty/channel/ChannelHandler;)Lio/netty/channel/ChannelPipeline;
+reactor.netty.channel.ChannelOperations.addReactiveBridge(Lio/netty/channel/Channel;Lreactor/netty/channel/ChannelOperations$OnSetup;Lreactor/netty/ConnectionObserver;)V
+reactor.netty.transport.TransportConfig$TransportChannelInitializer.initChannel(Lio/netty/channel/Channel;)V
+io.netty.channel.ChannelInitializer.initChannel(Lio/netty/channel/ChannelHandlerContext;)Z
+io.netty.channel.ChannelInitializer.handlerAdded(Lio/netty/channel/ChannelHandlerContext;)V
+io.netty.channel.AbstractChannelHandlerContext.callHandlerAdded()V
+io.netty.channel.DefaultChannelPipeline.callHandlerAdded0(Lio/netty/channel/AbstractChannelHandlerContext;)V
+io.netty.channel.DefaultChannelPipeline.access$100(Lio/netty/channel/DefaultChannelPipeline;Lio/netty/channel/AbstractChannelHandlerContext;)V
+io.netty.channel.DefaultChannelPipeline$PendingHandlerAddedTask.execute()V
+io.netty.channel.DefaultChannelPipeline.callHandlerAddedForAllHandlers()V
+io.netty.channel.DefaultChannelPipeline.invokeHandlerAddedIfNeeded()V
+io.netty.channel.AbstractChannel$AbstractUnsafe.register0(Lio/netty/channel/ChannelPromise;)V
+io.netty.channel.AbstractChannel$AbstractUnsafe.access$200(Lio/netty/channel/AbstractChannel$AbstractUnsafe;Lio/netty/channel/ChannelPromise;)V
+io.netty.channel.AbstractChannel$AbstractUnsafe$1.run()V
+io.netty.util.concurrent.AbstractEventExecutor.runTask(Ljava/lang/Runnable;)V
+io.netty.util.concurrent.AbstractEventExecutor.safeExecute(Ljava/lang/Runnable;)V
+io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(J)Z
+io.netty.channel.nio.NioEventLoop.run()V
+io.netty.util.concurrent.SingleThreadEventExecutor$4.run()V
+io.netty.util.internal.ThreadExecutorMap$2.run()V
+io.netty.util.concurrent.FastThreadLocalRunnable.run()V
+java.lang.Thread.run()V
+<root>.<root>()V
+
+----

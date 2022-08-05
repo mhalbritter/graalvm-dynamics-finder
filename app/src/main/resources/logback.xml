@@ -1,0 +1,13 @@
+<configuration>
+
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%date{yyyy-MM-dd'T'HH:mm:ss.SSSXXX} %-5level %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="warn">
+        <appender-ref ref="stdout"/>
+    </root>
+    <logger name="graalvm.dynamics.finder" level="info"/>
+</configuration>

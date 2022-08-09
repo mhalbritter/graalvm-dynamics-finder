@@ -14,13 +14,13 @@ class AsciiDocWriter implements ReportWriter {
     private final BufferedWriter fileOutputStream;
 
     AsciiDocWriter(Path outputFile) throws IOException {
-        this.fileOutputStream = Files.newBufferedWriter(outputFile, StandardCharsets.UTF_8, StandardOpenOption.CREATE, StandardOpenOption.WRITE);
+        this.fileOutputStream = Files.newBufferedWriter(outputFile, StandardCharsets.UTF_8, StandardOpenOption.CREATE, StandardOpenOption.WRITE, StandardOpenOption.TRUNCATE_EXISTING);
     }
 
     @Override
     public void reportReflectionFinding(ReflectionConfig reflectionConfig, CallStackElement callStackElement) throws IOException {
         // Heading
-        this.fileOutputStream.write("== Reflection access on ");
+        this.fileOutputStream.write("\n== Reflection access on ");
         this.fileOutputStream.write(reflectionConfig.clazz());
         this.fileOutputStream.write("\n\n");
 

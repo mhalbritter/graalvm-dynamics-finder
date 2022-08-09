@@ -14,7 +14,7 @@ class MarkdownWriter implements ReportWriter {
     private final BufferedWriter fileOutputStream;
 
     MarkdownWriter(Path outputFile) throws IOException {
-        this.fileOutputStream = Files.newBufferedWriter(outputFile, StandardCharsets.UTF_8, StandardOpenOption.CREATE, StandardOpenOption.WRITE);
+        this.fileOutputStream = Files.newBufferedWriter(outputFile, StandardCharsets.UTF_8, StandardOpenOption.CREATE, StandardOpenOption.WRITE, StandardOpenOption.TRUNCATE_EXISTING);
     }
 
     @Override

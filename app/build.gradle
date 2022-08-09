@@ -16,6 +16,7 @@ dependencies {
     runtimeOnly 'ch.qos.logback:logback-classic:1.2.11'
 
     testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
+    testImplementation 'org.assertj:assertj-core:3.23.1'
 }
 
 application {

@@ -10,7 +10,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
 
-class AsciiDocWriter implements OutputWriter {
+class AsciiDocWriter implements ReportWriter {
     private final BufferedWriter fileOutputStream;
 
     AsciiDocWriter(Path outputFile) throws IOException {

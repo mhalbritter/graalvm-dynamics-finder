@@ -10,7 +10,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
 
-class MarkdownWriter implements OutputWriter {
+class MarkdownWriter implements ReportWriter {
     private final BufferedWriter fileOutputStream;
 
     MarkdownWriter(Path outputFile) throws IOException {

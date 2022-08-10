@@ -14,6 +14,22 @@ public record CallStackElement(CallStackElement parent, String clazz, String met
         return this.clazz + "." + this.method + this.signature;
     }
 
+    /**
+     * Returns the next {@link CallStackElement} which differs in {@link #clazz()}.
+     *
+     * @return {@link CallStackElement} which differs in {@link #clazz()} or null, if no such element exists.
+     */
+    public CallStackElement findNextClass() {
+        CallStackElement current = parent();
+        while (current != null) {
+            if (!current.clazz().equals(clazz())) {
+                break;
+            }
+            current = current.parent();
+        }
+        return current;
+    }
+
     private void toStringAppend(StringBuilder stringBuilder) {
         stringBuilder.append(this.clazz).append('.').append(this.method).append(this.signature).append('\n');
         if (this.parent != null) {

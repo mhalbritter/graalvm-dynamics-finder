@@ -19,6 +19,10 @@ public class Conditions implements Predicate<String> {
         return included;
     }
 
+    public boolean isEmpty() {
+        return this.conditions.isEmpty();
+    }
+
     @Override
     public boolean test(String s) {
         return isIncluded(s);

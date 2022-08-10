@@ -29,9 +29,47 @@ The example report has been created by running:
 graalvm-dynamics-finder reflection --input metadata/partial-config-with-origins.json --output example-report.adoc --target reactor.netty.channel.ChannelOperationsHandler,reactor.netty.transport.ServerTransport$Acceptor,reactor.netty.http.server.HttpTrafficHandler
 ```
 
+## Use cases
+
+### Show reflection access to given classes
+
+Show all reflection calls to `reactor.netty.channel.ChannelOperationsHandler`:
+
+```
+graalvm-dynamics-finder reflection --input ... --output ... --target reactor.netty.channel.ChannelOperationsHandler
+```
+
+### Show reflection calls for a given caller class (directly or indirectly)
+
+Show all reflection calls where `reactor.netty.channel.ChannelOperationsHandler` is involved:
+
+```
+graalvm-dynamics-finder reflection --input ... --output ... --caller reactor.netty.channel.ChannelOperationsHandler
+```
+
+Show all reflection calls from `io.lettuce` package, but exclude those where `io.netty` package is involved:
+
+```
+graalvm-dynamics-finder reflection --input ... --output ... --caller io.lettuce.* --exclude-caller io.netty.*
+```
+
+### Show reflection calls for a given caller class (direct only)
+
+Show all reflection calls which `org.springframework.util.ClassUtils` did:
+
+```
+graalvm-dynamics-finder reflection --input ... --output ... --direct-caller org.springframework.util.ClassUtils
+```
+
+Show all reflection which the package `org.springframework` did, but ignore `org.springframework.util.ClassUtils`:
+
+```
+graalvm-dynamics-finder reflection --input ... --output ... --direct-caller org.springframework.*,-org.springframework.util.ClassUtils
+```
+
 ## Conditions
 
-The `--target` parameters accepts a list of comma-delimited list of conditions.
+Some parameters are conditions (for example `--target`, `--caller` or `--direct-caller`).
 A condition determines if a class is either included or excluded from the report.
 The list of conditions determine a pipeline, which is executed from beginning to end.
 If the pipeline decides that a class is included, it is shown in the report.
@@ -44,7 +82,7 @@ Include all classes:
 *
 ```
 
-This will lead to a report showing reflection access to all classes, which could be quite big.
+This will include all classes, which could generate a large record.
 
 Only include a specific class:
 
@@ -58,7 +96,13 @@ Only include some specific classes:
 reactor.netty.http.server.HttpTrafficHandler,reactor.netty.transport.ServerTransport$Acceptor
 ```
 
-Include all of `reactor.netty` package, but not `reactor.netty.transport` package:
+Include all of `reactor.netty` package:
+
+```
+reactor.netty.*
+```
+
+Include all of the `reactor.netty` package, but not the`reactor.netty.transport` package:
 
 ```
 reactor.netty.*,-reactor.netty.transport.*
@@ -71,7 +115,7 @@ If the condition doesn't start with `-` or `+`, `+` is implicitly assumed.
 You can use `*` in any place as a wildcard.
 It matches the empty string (`""`) too.
 
-Explicitly exclude all, then include only `reactor.netty` package, but not `reactor.netty.transport` package and not `reactor.netty.http.server.HttpTrafficHandler`:
+Explicitly exclude all classes (this is not required, as a pipeline starts with excluding all classes anyway), then include only the `reactor.netty` package, but not the `reactor.netty.transport` package and not `reactor.netty.http.server.HttpTrafficHandler`:
 
 ```
 -*,reactor.netty.*,-reactor.netty.transport.*,-reactor.netty.http.server.HttpTrafficHandler

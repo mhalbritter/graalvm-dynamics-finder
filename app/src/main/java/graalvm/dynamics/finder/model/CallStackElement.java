@@ -9,11 +9,6 @@ public record CallStackElement(CallStackElement parent, String clazz, String met
         return stringBuilder.toString();
     }
 
-    @Override
-    public String toString() {
-        return this.clazz + "." + this.method + this.signature;
-    }
-
     /**
      * Returns the next {@link CallStackElement} which differs in {@link #clazz()}.
      *
@@ -28,6 +23,11 @@ public record CallStackElement(CallStackElement parent, String clazz, String met
             current = current.parent();
         }
         return current;
+    }
+
+    @Override
+    public String toString() {
+        return this.clazz + "." + this.method + this.signature;
     }
 
     private void toStringAppend(StringBuilder stringBuilder) {
